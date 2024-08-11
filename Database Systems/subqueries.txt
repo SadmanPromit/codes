@@ -1,0 +1,38 @@
+Part A:
+
+Activity 01:
+
+SELECT Last_Name, Hire_Date
+FROM employees
+WHERE Department_Id = (SELECT Department_Id
+			FROM employees
+                        WHERE Last_Name = 'Zlotkey')
+AND Last_Name <> 'Zlotkey';
+
+Activity 02:
+
+SELECT Employee_Id, Last_Name, Salary
+FROM employees
+WHERE Salary > (SELECT AVG(Salary)
+		FROM employees)
+ORDER BY Salary;
+
+Part B:
+
+Activity 01:
+
+SELECT Last_Name, Salary
+FROM employees
+WHERE Manager_id = (SELECT Employee_Id
+		 	FROM employees
+                        WHERE Last_Name = 'King');
+
+Activity 02:
+
+SELECT Employee_Id, Last_Name, Salary
+FROM employees
+WHERE Salary > (SELECT AVG(Salary)
+		FROM employees)
+AND Department_Id = ANY(SELECT Department_Id
+		 	FROM employees
+			WHERE Last_Name LIKE '%u%');

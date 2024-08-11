@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Suggestion</title>
+  <script src="script.js"></script>
+  <style>
+    .suggestions {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Start typing a name in the input field below:</h1>
+  <form>
+    First name: <input type="text" id="nameInput" onkeyup="getSuggestions(this.value)">
+    <div class="suggestions" id="suggestions">Suggestions: no suggestion</div>
+  </form>
+</body>
+</html>

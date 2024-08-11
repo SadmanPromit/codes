@@ -1,0 +1,34 @@
+CREATE VIEW ALLTABLES 
+AS SELECT tu.User_ID, tu.First_Name, tu.Last_Name, tu.Email, tu.Phone_Number, 
+b.Booking_ID, b.Duration_days, p.Package_ID, p.Package_Name, p.Location_Name, p.Location_ID, p.Max_Cost, p.Min_Cost, 
+t.Transportation_ID, t.Transport_Name, t.Route_ID, t.Driver_Name, t.Driver_ID, e.Emergency_ID, e.Emergency_Type, e.Emergency_Address
+FROM touruser tu 
+LEFT OUTER JOIN bookings b 
+ON tu.User_ID = b.User_ID 
+LEFT OUTER JOIN packages p 
+ON p.Package_ID = b.Package_ID
+LEFT OUTER JOIN transportation t
+ON t.Package_ID = p.Package_ID
+LEFT OUTER JOIN emergency e
+ON e.User_ID = tu.User_ID
+ORDER BY User_ID;
+
+SELECT tu.User_ID, tu.First_Name, tu.Last_Name, b.Booking_ID, b.Duration_days, p.Package_ID, 
+p.Package_Name, p.Location_Name, p.Location_ID, p.Max_Cost, p.Min_Cost
+FROM touruser tu 
+LEFT OUTER JOIN bookings b 
+ON tu.User_ID = b.User_ID 
+LEFT OUTER JOIN packages p 
+ON p.Package_ID = b.Package_ID
+WHERE Location_Name = 'Sundarban'
+ORDER BY User_ID;
+
+SELECT tu.User_ID, tu.First_Name, tu.Last_Name, b.Booking_ID, b.Duration_days, p.Package_ID, 
+p.Package_Name, p.Location_Name, p.Location_ID, p.Max_Cost, p.Min_Cost
+FROM touruser tu 
+LEFT OUTER JOIN bookings b 
+ON tu.User_ID = b.User_ID 
+LEFT OUTER JOIN packages p 
+ON p.Package_ID = b.Package_ID
+WHERE Package_Name = 'Mountain Adventures'
+ORDER BY User_ID;

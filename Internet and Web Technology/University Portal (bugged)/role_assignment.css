@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#roleAssignmentContainer {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}

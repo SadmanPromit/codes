@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+</head>
+<body>
+	<form onsubmit="return validateForm()">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name"><br><br>
+
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username"><br><br>
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password"><br><br>
+
+		<label for="confirm-password">Re-type password:</label>
+		<input type="password" id="confirm-password" name="confirm-password"><br><br>
+
+		<label for="gender">Gender:</label>
+		<input type="radio" id="male" name="gender" value="male">Male
+		<input type="radio" id="female" name="gender" value="female">Female
+		<input type="radio" id="other" name="gender" value="other">Other<br><br>
+
+		<label for="skills">Programming skills:</label>
+		<input type="checkbox" id="java" name="skills" value="java">Java
+		<input type="checkbox" id="android" name="skills" value="android">Android
+		<input type="checkbox" id="ruby" name="skills" value="ruby">Ruby
+		<input type="checkbox" id="dotnet" name="skills" value="dotnet">.Net<br><br>
+
+		<label for="contact">Contact no.:</label>
+		<input type="text" id="contact" name="contact"><br><br>
+
+		<label for="email">Email:</label>
+		<input type="text" id="email" name="email"><br><br>
+
+		<label for="college">College:</label>
+		<select id="college" name="college">
+			<option value="">Select college</option>
+			<option value="college1">College 1</option>
+			<option value="college2">College 2</option>
+			<option value="college3">College 3</option>
+		</select><br><br>
+
+		<input type="submit" value="Submit">
+	</form>
+
+	<script>
+		function validateForm() {
+			let name = document.forms[0]["name"].value;
+			if (name == "") {
+				alert("Name cannot be empty");
+				return false;
+			}
+
+			let username = document.forms[0]["username"].value;
+			if (username == "" || username.includes(" ")) {
+				alert("Username cannot be empty and cannot contain whitespace");
+				return false;
+			}
+
+			let password = document.forms[0]["password"].value;
+			let confirmPassword = document.forms[0]["confirm-password"].value;
+			if (password.length < 8 || password.length > 32 || !(/^[a-zA-Z0-9]+$/.test(password)) || password != confirmPassword) {
+				alert("Password must be between 8-32 characters, and no special character is valid, and confirm password must match");
+				return false;
+			}
+
+			let gender = document.querySelector('input[name="gender"]:checked');
+			if (gender == null) {
+				alert("Gender must be selected");
+				return false;
+			}
+
+			let contact = document.forms[0]["contact"].value;
+						if (!/^\d+$/.test(contact)) {
+				alert("Contact number must contain numbers only");
+				return false;
+			}
+
+			let email = document.forms[0]["email"].value;
+			if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+				alert("Email should be a valid one");
+				return false;
+			}
+
+			let college = document.forms[0]["college"].value;
+			if (college == "") {
+				alert("College must be selected");
+				return false;
+			}
+
+			return true;
+		}
+	</script>
+</body>
+</html>
+

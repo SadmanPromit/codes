@@ -1,0 +1,47 @@
+body {
+    border: solid 1px black;
+}
+header {
+    border: solid 1px black;
+    padding: 50px;
+}
+h2 {
+    border: solid 1px black;
+}
+h3 {
+    border: solid 1px black;
+    position: absolute;
+    right: 16px;
+}
+p {
+    border: solid 1px black;
+    position: absolute;
+    right: 16px;
+}
+nav {
+    border: solid 1px black;
+    position: absolute;
+    left: 16px;
+}
+article {
+    border: solid 1px black;
+    text-align: center;
+    position: relative;
+    left: 25%;
+    right: 25%;
+}
+aside {
+    border: solid 1px black;
+    position: absolute;
+    right: 8px;
+}
+footer {
+    border: solid 1px black;
+    text-align: center;
+}
+nav, article, aside {
+    display: inline-block;
+}
+h2, h3 {
+    display: inline-block;
+}

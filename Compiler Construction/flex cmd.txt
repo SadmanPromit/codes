@@ -1,0 +1,3 @@
+flex ScannerGenerator.l
+gcc lex.yy.c -oScannerGenerator.exe
+ScannerGenerator.exe < Source.txt

@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#loginContainer {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+#loginForm label {
+    display: inline-block;
+    width: 90px;
+    margin-bottom: 10px;
+}
+
+#loginForm input[type="text"], #loginForm input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+#loginForm input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+#loginForm input[type="submit"]:hover {
+    background-color: #45a049;
+}

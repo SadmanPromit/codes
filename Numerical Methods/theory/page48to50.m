@@ -1,0 +1,12 @@
+m=.5;
+c=-2;
+x = [0 1 5 3 4 5 7 9 10];
+y = m*x + c
+t = linspace(1,10,10);
+x=t.*sin(t)
+y = (t - 1)/(t + 1)
+z = (sin(t)).^2./t.^2
+r = 2;
+theta = [0; pi/4; 3*pi/4; pi; 5*pi/4];
+x = r*cos(theta)
+y = r*sin(theta)

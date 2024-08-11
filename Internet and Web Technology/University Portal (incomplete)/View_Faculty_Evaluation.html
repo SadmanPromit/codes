@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="View Faculty Evaluation.css" rel="stylesheet" type="text/css" />
+    <title>View Faculty Evaluation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <h2><img src="logo.png" alt="logo" style="width:25px;height:30px;"> University Portal</h2>
+    </header>
+    <nav>
+        <button onclick="window.location.href='Home.html';">Home</button>
+        <button onclick="window.location.href='Profile.html';">Profile</button>
+        <button onclick="window.location.href='Advising.html';">Advising</button>
+        <button onclick="window.location.href='Grade Submission.html';">Grades</button>
+        <button onclick="window.location.href='Payments.html';">Payments</button>
+        <button onclick="window.location.href='Take Attendance.html';">Take Attendance</button>
+        <button onclick="window.location.href='View Faculty Evaluation.html';">Faculty Evaluation</button>
+        <button onclick="window.location.href='Curriculum.html';">Curriculum</button>
+        <button onclick="window.location.href='Degree.html';">Degree</button>
+        <button onclick="window.location.href='Services.html';">Services</button>
+        <button onclick="window.location.href='Send Message.html';">Send Message</button>
+        <button onclick="window.location.href='User Guides.html';">User Guides</button>
+        <button onclick="window.location.href='Login.html';">Logout</button>
+    </nav>
+    <button id="refresh">Refresh</button>
+    <table border="1" id="evaluationTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Point</th>
+                <th>Semester</th>
+                <th>CSE482.1</th>
+                <th>CSE482.2</th>
+                <th>CSE482.3</th>
+                <th>CSE482.4</th>
+                <th>CSE482.5</th>
+            </tr>
+        </thead>
+    </table>
+    <footer>Copyright © Sadman Sakib Khan | Email: sadman.khan@northsouth.edu</footer>
+
+    <script>
+        $(document).ready(function () {
+            $("#evaluationTable").fadeIn(2000);
+
+            $("#refresh").click(function () {
+                location.reload();
+            });
+        });
+    </script>
+</body>
+</html>

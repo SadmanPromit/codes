@@ -1,0 +1,161 @@
+CREATE TABLE user_type(
+user_type_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+user_type VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE user(
+user_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+user_type_id INT(10) NOT NULL,
+user_first_name VARCHAR(50) NOT NULL,
+user_middle_name VARCHAR(50),
+user_last_name VARCHAR(50) NOT NULL,
+user_address VARCHAR(255),
+FOREIGN KEY (user_type_id) REFERENCES user_type(user_type_id),
+INDEX(user_type_id)
+);
+
+CREATE TABLE department(
+department_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+department_name VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE department_chair(
+department_chair_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+department_id INT(10) NOT NULL,
+chair_user_id INT(10) NOT NULL,
+start_date DATE NOT NULL,
+end_date DATE,
+FOREIGN KEY (department_id) REFERENCES department(department_id),
+FOREIGN KEY (chair_user_id) REFERENCES user(user_id),
+INDEX(department_id),
+INDEX(chair_user_id)
+);
+
+CREATE TABLE course(
+course_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+department_id INT(10) NOT NULL,
+course_title VARCHAR(50) NOT NULL,
+FOREIGN KEY (department_id) REFERENCES department(department_id),
+INDEX(department_id)
+);
+
+CREATE TABLE section(
+section_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+course_id INT(10) NOT NULL,
+section_seat INT(10) NOT NULL CHECK (section_seat >= 0),
+section_room VARCHAR(50) NOT NULL,
+FOREIGN KEY (course_id) REFERENCES course(course_id),
+INDEX(course_id)
+);
+
+CREATE TABLE enrollment(
+enrollment_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+user_id INT(10) NOT NULL,
+section_id INT(10) NOT NULL,
+FOREIGN KEY (user_id) REFERENCES user(user_id),
+FOREIGN KEY (section_id) REFERENCES section(section_id),
+INDEX(user_id),
+INDEX(section_id)
+);
+
+CREATE TABLE login(
+login_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+user_id INT(10) NOT NULL UNIQUE,
+login_password VARCHAR(50) NOT NULL,
+FOREIGN KEY (user_id) REFERENCES user(user_id)
+);
+
+CREATE TABLE evaluation(
+evaluation_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+user_id INT(10) NOT NULL,
+section_id INT(10) NOT NULL,
+evaluation_data VARCHAR(255) NOT NULL,
+evaluation_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (user_id) REFERENCES user(user_id),
+FOREIGN KEY (section_id) REFERENCES section(section_id),
+INDEX(user_id),
+INDEX(section_id)
+);
+
+CREATE TABLE password_reset_request (
+    reset_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    user_id INT(10) NOT NULL,
+    reset_token VARCHAR(255) NOT NULL,
+    request_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    INDEX(user_id)
+);
+
+CREATE TABLE attendance (
+    attendance_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    user_id INT(10) NOT NULL,
+    section_id INT(10) NOT NULL,
+    attendance_date DATE NOT NULL,
+    present BOOLEAN NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    FOREIGN KEY (section_id) REFERENCES section(section_id),
+    INDEX(user_id),
+    INDEX(section_id)
+);
+
+CREATE TABLE grades (
+    grade_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    user_id INT(10) NOT NULL,
+    section_id INT(10) NOT NULL,
+    grade VARCHAR(2) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    FOREIGN KEY (section_id) REFERENCES section(section_id),
+    INDEX(user_id),
+    INDEX(section_id)
+);
+
+CREATE TABLE payment (
+    payment_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    user_id INT(10) NOT NULL,
+    payment_date DATE NOT NULL,
+    amount DECIMAL(8, 2) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    INDEX(user_id)
+);
+
+CREATE TABLE messages (
+    message_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    sender_user_id INT(10) NOT NULL,
+    receiver_user_id INT(10) NOT NULL,
+    message_content TEXT NOT NULL,
+    message_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (sender_user_id) REFERENCES user(user_id),
+    FOREIGN KEY (receiver_user_id) REFERENCES user(user_id),
+    INDEX(sender_user_id),
+    INDEX(receiver_user_id)
+);
+
+CREATE TABLE messages (
+    message_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    sender_user_id INT(10) NOT NULL,
+    receiver_user_id INT(10) NOT NULL,
+    message_content TEXT NOT NULL,
+    message_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (sender_user_id) REFERENCES user(user_id),
+    FOREIGN KEY (receiver_user_id) REFERENCES user(user_id),
+    INDEX(sender_user_id),
+    INDEX(receiver_user_id)
+);
+
+CREATE TABLE curriculum (
+    curriculum_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    course_id INT(10) NOT NULL,
+    curriculum_content TEXT NOT NULL,
+    FOREIGN KEY (course_id) REFERENCES course(course_id),
+    INDEX(course_id)
+);
+
+CREATE TABLE faculty_assignment (
+    assignment_id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    section_id INT(10) NOT NULL,
+    faculty_user_id INT(10) NOT NULL,
+    FOREIGN KEY (section_id) REFERENCES section(section_id),
+    FOREIGN KEY (faculty_user_id) REFERENCES user(user_id),
+    INDEX(section_id),
+    INDEX(faculty_user_id)
+);
