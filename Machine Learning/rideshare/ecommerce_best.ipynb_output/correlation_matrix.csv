@@ -1,0 +1,113 @@
+,price
+price,1.0
+name_Lux Black XL,0.5000574673775018
+name_Black SUV,0.45309609916900834
+distance,0.34506106627963956
+surge_multiplier,0.2404581265896696
+name_Lux Black,0.20654375754178494
+name_Black,0.13118507314233946
+cab_type_Lyft,0.08338528045908633
+destination_Boston University,0.07751456473895384
+source_Boston University,0.07463391242664626
+source_Fenway,0.05931667050278469
+source_Financial District,0.0534679344448734
+destination_Fenway,0.051779976785269084
+destination_Financial District,0.04905104158244734
+source_Northeastern University,0.04384713632316421
+destination_Northeastern University,0.04146742600462194
+name_Lux,0.03885730587744727
+destination_North Station,0.008360159797908521
+short_summary_ Mostly Cloudy ,0.0027337371394361757
+latitude,0.0020884526493539723
+icon_ partly-cloudy-night ,0.0019435366830173088
+source_Theatre District,0.001677853873807994
+visibility.1,0.0014965032943407713
+visibility,0.0014965032943407713
+windGust,0.001218006913905932
+long_summary_ Rain throughout the day. ,0.001206361295492501
+long_summary_ Light rain in the morning and overnight. ,0.0011701180256313947
+icon_ partly-cloudy-day ,0.0011687413248933432
+precipIntensityMax,0.0011139747408189604
+long_summary_ Partly cloudy throughout the day. ,0.0010954362109837693
+long_summary_ Rain in the morning and afternoon. ,0.0010095698706627714
+windSpeed,0.0009897669851194983
+long_summary_ Light rain in the morning. ,0.0009480946468761857
+month,0.0009134617532601354
+cloudCover,0.0008826583137255029
+pressure,0.0008655638998942952
+windGustTime,0.0008513163770056363
+apparentTemperatureLow,0.0008311867744785295
+apparentTemperatureMinTime,0.0008137651531076429
+timestamp,0.0008076159477136969
+temperatureMinTime,0.0007693843490169415
+temperatureMaxTime,0.0007661684653059928
+uvIndexTime,0.0007633485722083939
+apparentTemperatureLowTime,0.0007614408023652089
+sunsetTime,0.0007599420749662341
+sunriseTime,0.0007599324252311979
+temperatureHighTime,0.0007586944596540997
+temperatureLowTime,0.0007537018285281943
+apparentTemperatureMaxTime,0.000746480959594459
+apparentTemperatureHighTime,0.0007407873388659508
+hour,0.0005611505042551497
+short_summary_ Light Rain ,0.0005079494617953623
+ozone,0.0004602537398290264
+short_summary_ Partly Cloudy ,0.00035027709604113926
+temperatureLow,0.0001822872560984545
+precipIntensity,0.00016611115410955377
+short_summary_ Foggy ,-5.221475530235319e-05
+icon_ fog ,-5.221475530235319e-05
+temperature,-8.418012498594997e-05
+short_summary_ Rain ,-0.00010361516712752589
+apparentTemperature,-0.0001926692769252074
+precipProbability,-0.00024256449265465063
+apparentTemperatureHigh,-0.0002610086883276106
+apparentTemperatureMax,-0.00028969210721470936
+icon_ rain ,-0.00032061985211369803
+uvIndex,-0.00042353490920890244
+temperatureMin,-0.000428340124124125
+"long_summary_ Rain until morning, starting again in the evening. ",-0.0004585431546362441
+short_summary_ Drizzle ,-0.0004797626648874316
+temperatureHigh,-0.0005157115587487567
+temperatureMax,-0.0005497128496088071
+apparentTemperatureMin,-0.000579651422337615
+dewPoint,-0.0006149274843920421
+icon_ clear-day ,-0.000667877948608476
+long_summary_ Foggy in the morning. ,-0.0007155554066932532
+day,-0.0007221941882774031
+icon_ cloudy ,-0.0007291980042446399
+short_summary_ Overcast ,-0.0007291980042446399
+long_summary_ Possible drizzle in the morning. ,-0.0007338496496177405
+long_summary_ Overcast throughout the day. ,-0.0007401980865923823
+long_summary_ Light rain until evening. ,-0.0010640715482864455
+short_summary_ Possible Drizzle ,-0.0011369718424569602
+humidity,-0.0012378718852873332
+windBearing,-0.0013819759841782546
+longitude,-0.001417153391409598
+moonPhase,-0.0016019313912631536
+long_summary_ Mostly cloudy throughout the day. ,-0.0017529433355009066
+icon_ clear-night ,-0.0023499032483788513
+short_summary_ Clear ,-0.0023866746960726597
+source_North Station,-0.005821206917452406
+destination_Beacon Hill,-0.009564999316749458
+destination_West End,-0.010306001685050335
+destination_Back Bay,-0.010834477096023191
+source_West End,-0.014091993357352032
+source_Back Bay,-0.01610058417829129
+destination_Theatre District,-0.018457928259967067
+source_South Station,-0.028216453726521887
+source_Beacon Hill,-0.028396310363488674
+name_UberXL,-0.02858655729140764
+name_Lyft XL,-0.039163060705414
+source_North End,-0.04500649907970495
+destination_North End,-0.04989122413824867
+destination_South Station,-0.05550382023315731
+destination_Haymarket Square,-0.07404021620723084
+cab_type_Uber,-0.08338528045908625
+source_Haymarket Square,-0.09592362833432261
+name_Lyft,-0.21975584806373039
+name_UberX,-0.22355077563030526
+name_WAV,-0.2235570301613759
+name_UberPool,-0.25692954274995944
+name_Shared,-0.3332354490089977
+timezone_America/New_York,
