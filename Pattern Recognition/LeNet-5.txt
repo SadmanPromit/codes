@@ -1,0 +1,4 @@
+RBF in Gaussian connection not SoftMax
+
+parameters:
+6 * (5 * 5 * 1 + 1) + 6 * 2 + 16 * (5 * 5 * 6 + 1) + 16 * 2 + 120 * (5 * 5 * 16 + 1) + 84 * (120 + 1) + 10 * (84 + 1) = 61750

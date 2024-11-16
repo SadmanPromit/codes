@@ -1,0 +1,9 @@
+False Positive Rate, FPR
+True Positive Rate, TPR = Sensitivity = Recall
+ROC (Receiver Operating Characteristic) curve
+MRR = (1 / N) * Σ(1 / rank)
+MAP = (1 / Q) * Σ(AP)
+https://youtu.be/BD9TkvEsKwM
+
+GLGE Hard
+keep 25%

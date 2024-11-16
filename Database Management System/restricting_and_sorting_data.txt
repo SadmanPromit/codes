@@ -1,0 +1,29 @@
+Part A:
+Activity 01:
+SELECT last_name, job_id, Hire_Date
+FROM employees
+WHERE Hire_Date BETWEEN '2002-02-20' AND '2004-05-01'
+ORDER BY Hire_Date;
+
+Activity 02:
+SELECT last_name, Department_Id
+FROM employees
+WHERE Department_Id IN (20, 50)
+ORDER BY last_name;
+
+Part B:
+Activity 01:
+SELECT last_name, Hire_Date
+FROM employees
+WHERE Hire_Date BETWEEN '2004-01-01' AND '2004-12-31';
+
+Activity 02:
+SELECT last_name, Salary, Commission_PCT
+FROM employees
+WHERE Commission_PCT IS NOT NULL
+ORDER BY Salary DESC, Commission_PCT DESC;
+
+Activity 03:
+SELECT last_name
+FROM employees
+WHERE Last_Name LIKE '%a%' AND Last_Name LIKE '%e%';

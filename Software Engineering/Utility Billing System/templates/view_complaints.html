@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="content-wrap">
+        <div class="container">
+            <h1>View Complaints</h1>
+            {% for complaint in complaints %}
+                <p>{{ complaint.content }} - {{ complaint.timestamp }} by User ID: {{ complaint.user_id }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <footer>
+        Electrical and Computer Engineering (ECE) | North South University, Dhaka, Bangladesh | &copy; 2024 Sadman Sakib Khan Promit
+    </footer>
+</body>
+</html>

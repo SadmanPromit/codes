@@ -1,0 +1,20 @@
+The L1 and L2 norm penalties apply different constraints on the parameters of machine learning models, and they have different effects over the course of training:
+L1 Norm (Lasso Regularization):
+Effect on Parameters: It encourages sparsity in the parameter vector. This means that some parameter values are forced to be exactly zero, which can be interpreted as the model choosing to completely ignore certain features.
+Math Behind Sparsity: This occurs because the derivative (or subgradient, in the case of non-differentiable points) of the L1 norm with respect to a weight can push the weight to become exactly zero during optimization.
+Use Case: L1 regularization is particularly useful in feature selection where the goal is to reduce the number of features in a model, either for interpretation or to prevent overfitting when the number of features is high relative to the number of observations.
+Training Path: The training process can be unstable near zero, where parameters might quickly jump to zero if their contribution to reducing the prediction error is not significant compared to the regularization penalty.
+
+L2 Norm (Ridge Regularization):
+Effect on Parameters: It encourages the weights to be small but does not necessarily force them to zero. This means that all features are kept in the model but their influence is penalized if they have large coefficients.
+Math Behind Weight Shrinkage: The derivative of the L2 norm with respect to a weight is proportional to the value of the weight itself, which leads to a smooth penalty that scales down all weights evenly.
+Use Case: L2 regularization is often used to handle multicollinearity, to reduce model complexity, and to prevent overfitting when there is less concern about feature selection.
+Training Path: The training process is more stable and smooth compared to L1, and weights tend to decay towards zero gradually without becoming exactly zero.
+
+Over the Course of Training:
+With L1 Regularization: The parameters can fluctuate between being non-zero and zero, depending on their significance to the model's predictive power and the magnitude of the regularization penalty. Over time, less important features' weights will be driven to zero, leading to a sparse model.
+
+With L2 Regularization:
+The parameters will generally decrease in magnitude in a continuous manner throughout training. Because the penalty is quadratic, weights that are already small are penalized less, which leads to a model where many weights are non-zero but small. This means that L2 regularization does not inherently perform feature selection.
+
+The choice between L1 and L2 regularization depends on the specific needs of the model and the data. If interpretability and feature selection are important, L1 might be preferred. If a well-conditioned model where all features contribute somewhat evenly is desired, L2 might be more appropriate. It's also common to use a combination of both, known as Elastic Net regularization, which can offer a balance between feature selection and parameter shrinkage.

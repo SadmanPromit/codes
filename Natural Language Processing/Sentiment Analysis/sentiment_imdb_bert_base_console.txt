@@ -1,0 +1,33 @@
+"C:\Program Files\Python311\python.exe" "G:\My Drive\Courses\CSE495\Code\sentiment_imdb_bert_base.py" 
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.bias', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+C:\Program Files\Python311\Lib\site-packages\transformers\tokenization_utils_base.py:2354: FutureWarning: The `pad_to_max_length` argument is deprecated and will be removed in a future version, use `padding=True` or `padding='longest'` to pad to the longest sequence in the batch, or use `padding='max_length'` to pad to a max length. In this case, you can give a specific length with `max_length` (e.g. `max_length=45`) or leave max_length to None to pad to the maximal input size of the model (e.g. 512 for Bert).
+  warnings.warn(
+C:\Program Files\Python311\Lib\site-packages\transformers\optimization.py:391: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Epoch: 1 | Train Loss: 0.3024 | Train Acc: 0.8954 | Train F1-Score: 0.8954 | Val Loss: 0.2796 | Val Acc: 0.9187 | Val F1-Score: 0.9187 | Time Elapsed: 2112.91 sec
+Epoch: 2 | Train Loss: 0.1977 | Train Acc: 0.9475 | Train F1-Score: 0.9475 | Val Loss: 0.3362 | Val Acc: 0.9221 | Val F1-Score: 0.9221 | Time Elapsed: 2068.48 sec
+Epoch: 3 | Train Loss: 0.1181 | Train Acc: 0.9738 | Train F1-Score: 0.9738 | Val Loss: 0.4608 | Val Acc: 0.9177 | Val F1-Score: 0.9176 | Time Elapsed: 2067.56 sec
+Epoch: 4 | Train Loss: 0.0742 | Train Acc: 0.9852 | Train F1-Score: 0.9852 | Val Loss: 0.5284 | Val Acc: 0.9198 | Val F1-Score: 0.9198 | Time Elapsed: 2131.77 sec
+Epoch: 5 | Train Loss: 0.0513 | Train Acc: 0.9902 | Train F1-Score: 0.9902 | Val Loss: 0.4863 | Val Acc: 0.9194 | Val F1-Score: 0.9194 | Time Elapsed: 2056.42 sec
+Epoch: 6 | Train Loss: 0.0415 | Train Acc: 0.9926 | Train F1-Score: 0.9926 | Val Loss: 0.5291 | Val Acc: 0.9164 | Val F1-Score: 0.9164 | Time Elapsed: 2053.95 sec
+Epoch: 7 | Train Loss: 0.0272 | Train Acc: 0.9953 | Train F1-Score: 0.9953 | Val Loss: 0.6873 | Val Acc: 0.9107 | Val F1-Score: 0.9105 | Time Elapsed: 2034.93 sec
+Epoch: 8 | Train Loss: 0.0260 | Train Acc: 0.9953 | Train F1-Score: 0.9953 | Val Loss: 0.6419 | Val Acc: 0.9192 | Val F1-Score: 0.9192 | Time Elapsed: 2067.02 sec
+Epoch: 9 | Train Loss: 0.0187 | Train Acc: 0.9967 | Train F1-Score: 0.9967 | Val Loss: 0.6782 | Val Acc: 0.9235 | Val F1-Score: 0.9235 | Time Elapsed: 2052.39 sec
+Epoch: 10 | Train Loss: 0.0146 | Train Acc: 0.9974 | Train F1-Score: 0.9974 | Val Loss: 0.5913 | Val Acc: 0.9228 | Val F1-Score: 0.9228 | Time Elapsed: 2050.92 sec
+Epoch: 11 | Train Loss: 0.0130 | Train Acc: 0.9978 | Train F1-Score: 0.9978 | Val Loss: 0.6955 | Val Acc: 0.9226 | Val F1-Score: 0.9226 | Time Elapsed: 2053.93 sec
+Epoch: 12 | Train Loss: 0.0089 | Train Acc: 0.9985 | Train F1-Score: 0.9985 | Val Loss: 0.7450 | Val Acc: 0.9224 | Val F1-Score: 0.9224 | Time Elapsed: 2026.10 sec
+Epoch: 13 | Train Loss: 0.0099 | Train Acc: 0.9982 | Train F1-Score: 0.9982 | Val Loss: 0.7854 | Val Acc: 0.9230 | Val F1-Score: 0.9230 | Time Elapsed: 2037.64 sec
+Epoch: 14 | Train Loss: 0.0059 | Train Acc: 0.9990 | Train F1-Score: 0.9990 | Val Loss: 0.7651 | Val Acc: 0.9232 | Val F1-Score: 0.9232 | Time Elapsed: 2055.47 sec
+Epoch: 15 | Train Loss: 0.0026 | Train Acc: 0.9995 | Train F1-Score: 0.9995 | Val Loss: 0.8983 | Val Acc: 0.9250 | Val F1-Score: 0.9250 | Time Elapsed: 2030.65 sec
+Epoch: 16 | Train Loss: 0.0020 | Train Acc: 0.9998 | Train F1-Score: 0.9998 | Val Loss: 0.8578 | Val Acc: 0.9257 | Val F1-Score: 0.9257 | Time Elapsed: 2012.81 sec
+Epoch: 17 | Train Loss: 0.0030 | Train Acc: 0.9995 | Train F1-Score: 0.9995 | Val Loss: 0.8497 | Val Acc: 0.9244 | Val F1-Score: 0.9244 | Time Elapsed: 2064.43 sec
+Epoch: 18 | Train Loss: 0.0005 | Train Acc: 0.9999 | Train F1-Score: 0.9999 | Val Loss: 0.9278 | Val Acc: 0.9252 | Val F1-Score: 0.9252 | Time Elapsed: 2034.43 sec
+Epoch: 19 | Train Loss: 0.0005 | Train Acc: 0.9999 | Train F1-Score: 0.9999 | Val Loss: 0.9652 | Val Acc: 0.9252 | Val F1-Score: 0.9252 | Time Elapsed: 2044.85 sec
+Epoch: 20 | Train Loss: 0.0004 | Train Acc: 1.0000 | Train F1-Score: 1.0000 | Val Loss: 0.9707 | Val Acc: 0.9259 | Val F1-Score: 0.9259 | Time Elapsed: 2079.31 sec
+
+Process finished with exit code 0

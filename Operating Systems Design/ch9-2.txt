@@ -1,0 +1,33 @@
+1. Consider a machine with 64 MB physical memory and a 
+32-bit virtual address space. If the page size is 4KB, 
+what is the approximate size of the page table? 
+(a) 16 MB
+(b) 8 MB
+(c) 2 MB
+(d) 24 MB
+
+virtual add--> logical add. --. 32
+
+  m = 32
+  m = p (page number) + n (off)   -->  32 = p + 12 --> p = 32-12 = 20
+
+  given, page size is 4kb = 1kb * 4 = 2^10 * 2^2 = 2^12  --> 12 bit
+  page number, p = 20 bit  --> total no. of index for the table = 2^20
+
+
+        ----
+        ----
+        ----
+        2^20 entries  ---> frame = size =?
+
+
+     64 MB  = 1 MB * 64
+            = 1024 KB  *  64
+            = 1KB * 1024 * 64   = 2^10 * 2^10 * 2^6  = 2^26
+
+
+      26  ---> PA        26 = f + d (12) -->   f--> 14   == 1.75 byte
+
+        2^20 * frame size =  ? -bit  ---? byte --? KB --> MB   
+
+            

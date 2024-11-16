@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="content-wrap">
+        <div class="container">
+            <h1 class="centered-title">Welcome, {{ current_user.username }}</h1>
+            <!-- User Profile Section -->
+            <h2 class="centered-title">Your Profile</h2>
+            <div class="profile-info">
+                <p><strong>Username:</strong> {{ current_user.username }}</p>
+                <p><strong>Email:</strong> {{ current_user.email }}</p>
+                <p><strong>Address:</strong> {{ current_user.address }}</p>
+                <p><strong>Phone:</strong> {{ current_user.phone }}</p>
+            </div>
+            <!-- Billing History Section -->
+            <h2 class="centered-title">Your Bills</h2>
+            {% for bill in bills %}
+            <div class="data-row">
+                <div class="header">
+                    <img src="{{ url_for('static', filename='descologo.png') }}" alt="DESCO Logo" class="logo">
+                    <div class="bill-details">
+                        <p><strong>Date:</strong> {{ bill.date.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                        <p><strong>Order No:</strong> {{ bill.id }}</p>
+                    </div>
+                </div>
+                <div class="bill-info">
+                    <p><strong>Name:</strong> {{ current_user.username }}</p>
+                    <p><strong>Meter No:</strong> {{ bill.meter_no }}</p>
+                    <p><strong>Account No:</strong> {{ current_user.account_no }}</p>
+                </div>
+                <div class="bill-costs">
+                    <p><strong>Energy Cost:</strong> {{ bill.amount }}</p>
+                    <p><strong>VAT (5%):</strong> {{ bill.vat }}</p>
+                    <p><strong>Rebate:</strong> {{ bill.rebate }}</p>
+                    <p><strong>Gross Amount:</strong> {{ bill.gross_amount }}</p>
+                </div>
+                <div class="button-container">
+                    <a href="{{ url_for('generate_bill_pdf', bill_id=bill.id) }}" class="btn-download-pdf">Download PDF</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <footer>
+        Electrical and Computer Engineering (ECE) | North South University, Dhaka, Bangladesh | &copy; 2024 Sadman Sakib Khan Promit
+    </footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+nav, article {
+    text-align: center;
+}
+p {
+    float: right;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+footer {
+    position: fixed;
+    bottom: 0px;
+}

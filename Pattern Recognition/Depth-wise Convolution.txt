@@ -1,0 +1,1 @@
+In depth-wise convolution, the number of filters is equal to the number of input channels because each input channel gets its own filter. For group convolution, the number of filters differs from the number of input channels. Still, it should be distributed to match the number of groups and the desired number of output channels.

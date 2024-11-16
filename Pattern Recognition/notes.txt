@@ -1,0 +1,29 @@
+Padding formula derivation:
+Give that,
+O = ceil(I / S)
+We know,
+O = (I - F + 2 * P) / S + 1
+Therefore,
+(I - F + 2 * P) / S + 1 = ceil(I / S)
+=>
+(I - F + 2 * P) / S = ceil(I / S) - 1
+=>
+I - F + 2 * P = S * (ceil(I / S) - 1)
+=>
+2 * P = S * (ceil(I / S) - 1) - I + F
+=>
+P = (S * (ceil(I / S) - 1) - I + F) / 2
+=>
+P = (S * ceil(I / S) - S - I + F) / 2
+=>
+P = (S * ceil(I / S) - I + F - S) / 2
+Therefore,
+Pstart = floor((S * ceil(I / S) - I + F - S) / 2),
+Pend = ceil((S * ceil(I / S) - I + F - S) / 2).
+
+O = floor((N - F + 2 * P) / S + 1)
+Parameters = Nf * (Wf * Hf * Din + 1) = #F * (Fsize + 1)
+Multiplications = Wout * Hout * Nf * Wf * Hf * Din = Osize * Fsize
+
+UNET – CNN:
+O = S * (I - 1) + F - 2 * P

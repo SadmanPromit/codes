@@ -1,0 +1,58 @@
+create table user(
+user_id numeric(10) primary key,
+section_id numeric(10),
+department_id numeric(10),
+user_type varchar(50) not null ,
+user_first_name varchar(50) not null,
+user_middle_name varchar(50),
+user_last_name varchar(50) not null,
+user_address varchar(50)
+);
+create table department(
+department_id numeric(10) primary key,
+department_chairman_user_id numeric(10) not null,
+departmentname varchar(50) not null,
+foreign key (department_chairman_user_id) references user(user_id)
+);
+create table message(
+message_id numeric(10) primary key,
+message_sender_user_id numeric(10) not null,
+message_receiever_user_id numeric(10) not null,
+message_body varchar(160) not null,
+foreign key (message_sender_user_id) references user(user_id),
+foreign key (message_receiever_user_id) references user(user_id)
+);
+create table course(
+course_id numeric(10) primary key,
+department_id numeric(10) not null,
+course_title varchar(50) not null,
+course_section numeric(10) not null,
+foreign key (department_id) references department(department_id)
+);
+create table section(
+section_id numeric(10) primary key,
+course_id numeric(10) not null,
+section_seat numeric(10) not null,
+section_room varchar(50) not null,
+section_student numeric(10) not null,
+foreign key (course_id) references course(course_id)
+);
+create table login(
+login_id numeric(10) primary key,
+user_id numeric(10) not null,
+user_type_id numeric(10) not null,
+login_password varchar(50) not null,
+foreign key (user_id) references user(user_id)
+);
+create table evaluation(
+evaluation_id numeric(10) primary key,
+user_id numeric(10) not null,
+section_id numeric(10) not null,
+evaluation_data binary not null,
+foreign key (user_id) references user(user_id),
+foreign key (section_id) references section(section_id)
+);
+alter table user
+add foreign key (section_id) references section(section_id);
+alter table user
+add foreign key (department_id) references department(department_id);

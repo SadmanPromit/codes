@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Admin Panel.css" rel="stylesheet" type="text/css" />
+    <title>Admin Panel</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("form").submit(function (event) {
+                var id = $("#ID").val();
+                var password = $("#Password").val();
+                var newPassword = $("#NewPassword").val();
+                var confirmPassword = $("#ConfirmPassword").val();
+
+                if (id == "" || password == "" || newPassword == "" || confirmPassword == "") {
+                    alert("Please fill out all fields");
+                    event.preventDefault();
+                }
+                else if (newPassword != confirmPassword) {
+                    alert("New password and confirm password do not match");
+                    event.preventDefault();
+                }
+                else {
+                    alert("Your form is submitted");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h2><img src="logo.png" alt="logo" style="width:25px;height:30px;"> University Portal</h2>
+    </header>
+    <nav>
+        <button onclick="window.location.href='Admin Panel.html';">Home</button>
+        <button onclick="window.location.href='User Guides.html';">User Guides</button>
+        <button onclick="window.location.href='Login.html';">Logout</button>
+    </nav>
+    <form action="Admin_Panel.php" method="POST">
+        <h3>Edit Database:</h3>
+        <input type="radio" id="Add" name="AddDelete" value="Add">
+        <label for="Add">Add</label>
+        <input type="radio" id="Delete" name="AddDelete" value="Delete">
+        <label for="Delete">Delete</label></br>
+        <h3>Type:</h3>
+        <input type="radio" id="Faculty" name="FacultyInstructorStudent" value="Faculty">
+        <label for="Faculty">Faculty</label>
+        <input type="radio" id="Instructor" name="FacultyInstructorStudent" value="Instructor">
+        <label for="Instructor">Instructor</label>
+        <input type="radio" id="Student" name="FacultyInstructorStudent" value="Student">
+        <label for="Student">Student</label><br>
+        <input type="text" id="ID" name="ID" placeholder="ID/Initial.."></br>
+        <input type="submit" value="Submit"></br>
+    </form>
+    <form action="Admin_Panel.php" method="POST">
+        <h3>Change Password:</h3>
+        <input type="password" id="Password" name="Password" placeholder="Current Password.."></br>
+        <input type="password" id="NewPassword" name="NewPassword" placeholder="New Password.."></br>
+        <input type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password:.."></br>
+        <input type="submit" value="Change Password">
+    </form>
+    <footer>Copyright © Sadman Sakib Khan | Email: sadman.khan@northsouth.edu</footer>
+</body>
+</html>

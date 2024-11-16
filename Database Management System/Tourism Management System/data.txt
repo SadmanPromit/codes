@@ -1,0 +1,108 @@
+CREATE TABLE TourUser(
+First_Name VARCHAR(25),
+Last_Name VARCHAR(25) NOT NULL,
+User_ID NUMERIC(6) PRIMARY KEY,
+Email VARCHAR(25) NOT NULL,
+Phone_Number NUMERIC(15));
+
+INSERT INTO TourUser VALUES
+('Samin', 'Yasar', 101, 'syasar@gmail.com', 8801724345789),
+('Sami', 'Alim', 102, 'salim@yahoo.com' , 8801625643890),
+('Mim', 'Sarwar', 103, 'msarwar@yahoo.com', 8801711789546),
+('Jesan','Rana', 104, 'jrana@live.com', 8801616057392),
+('Samia', 'Tasnim', 105, 'stasnim@gmail.com', 8801911209876),
+('Robin', 'Roy', 106, 'rroy@yahoo.com', 8801824567865),
+('Taha', 'Islam', 107, 'tislam@gmail.com', 8801674556876),
+('Abrar', 'Hasan', 108, 'ahsan@gmail.com', 880172456792),
+('Kashfia', 'Rahman', 109, 'krahman@live.com', 8801911436894),
+('Badhon', 'Ahmed', 110, 'bahmed@gmail.com', 880162411765);
+
+
+CREATE TABLE Packages(
+Package_ID NUMERIC(6) PRIMARY KEY,
+Package_Name VARCHAR(25) NOT NULL,
+Location_Name VARCHAR(25) NOT NULL,
+Min_Cost NUMERIC(8),
+Max_Cost NUMERIC(8),
+Location_ID NUMERIC(6) NOT NULL);
+
+INSERT INTO Packages VALUES 
+(01, 'Beach Destination', 'Cox’s Bazar', 4500, 7900, 1100),
+(02, 'Beach Destination', 'Saint Martin', 5500, 8800, 1101),
+(03, 'Jungle Safari', 'Sundarban', 8000, 11000, 1102),
+(04, 'Heritage of Dhaka','Buriganga', 2000 ,3500 , 1103),
+(05, 'Mountain Adventures','Rangamati', 3500, 5400, 1104),
+(06, 'Mountain Adventures', 'Bandarban', 3600 ,5000, 1105),
+(07, 'Mountain Adventures','Sajek valley', 4200, 5600, 1106),
+(08, 'Land of Tea Estates','Sylhet', 4800, 6000, 1107),
+(09, 'Land of Tea Estates','Srimangal', 5200, 6500 , 1108),
+(10, 'Hill tracts','Khagrachari', 6200, 7900, 1109),
+(11, 'Beach Explore', 'Kuakata', 5800, 7800, 1110);
+
+
+
+
+CREATE TABLE Bookings(
+Booking_ID NUMERIC(6) PRIMARY KEY,
+Duration_In_Days NUMERIC(3),
+User_ID NUMERIC(6) NOT NULL,
+Package_ID NUMERIC (6) NOT NULL,
+FOREIGN KEY (User_ID) REFERENCES TourUser(User_ID),
+FOREIGN KEY (Package_ID) REFERENCES Packages(Package_ID));
+
+INSERT INTO Bookings VALUES
+(10, 3, 103, 02),
+(20, 2, 101, 01),
+(30, 1, 101, 04),
+(40, 4, 109, 03),
+(50, 5, 108, 02),
+(60, 3, 106, 05),
+(70, 4, 104, 07),
+(80, 2, 104, 11),
+(90, 1, 109, 04), 
+(100, 5, 107, 10); 
+
+
+CREATE TABLE Transportation(
+Transportation_ID NUMERIC(6) PRIMARY KEY,
+Route_ID NUMERIC(6) NOT NULL,
+Transport_Name VARCHAR(25),
+Driver_Name VARCHAR(25) NOT NULL,
+Driver_ID NUMERIC(6) NOT NULL,
+Package_ID NUMERIC(6) NOT NULL,
+FOREIGN KEY (Package_ID) REFERENCES Packages(Package_ID));
+
+INSERT INTO Transportation VALUES
+(743956, 10001, 'Hanif', 'Rafiq', 983981, 09),
+(112302, 10301, 'Sb', 'Karim', 342981, 10),
+(132103, 10401, 'Greenline', 'Shupriyo', 982341, 11),
+(103412, 13043, 'Hanif', 'Jamal', 653981, 07),
+(103123, 10311, 'Syamoli', 'Hasan', 983561, 06),
+(343106, 10004, 'Sb', 'Shafiq', 945681, 04),
+(102317, 10303, 'Syamoli', 'Sakib', 984561, 05),
+(101238, 14041, 'Greenline', 'Ronnie', 456981, 02),
+(102139, 10451, 'Hanif', 'Abdul', 984541, 01),
+(111230, 12101, 'Hanif', 'Pasha', 553981, 03);
+
+
+CREATE TABLE Emergency(
+Emergency_ID NUMERIC(6) PRIMARY KEY,
+User_ID  NUMERIC(6) NOT NULL,
+Emergency_Type VARCHAR(50),
+Emergency_Address VARCHAR(60),
+FOREIGN KEY (User_ID) REFERENCES TourUser(User_ID));
+
+
+INSERT INTO Emergency VALUES
+(101, 109, 'Health issue', 'Azimpur road 1205'),
+(102, 108, 'Loss of personal belonging', null),
+(103, 101, 'Toxic gas releases', 'Bangla Bazar road Dhaka 1205'),
+(104, 107 , 'Explosions', 'Dokhin Bazar Kulaura Moulvibazar'),
+(105, 101, 'Floods', 'Kolatoli Cox Bazar 4700'),
+(106, 103, 'Loss of property/money', null),
+(107, 105, 'Tropical storms', ' Zubli Road Booking Booth Enayet Bazar Ctg'),
+(108, 102, 'Fire', null),
+(109, 102, 'Wildfire emergency', 'Moulvibazar Road Srimangal'),
+(110, 103, 'Criminal act', null);
+
+

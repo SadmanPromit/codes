@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#message-container {
+    height: 90vh;
+    overflow-y: auto;
+}
+
+#message-form {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+    background-color: #efefef;
+    display: flex;
+}
+
+#message-content {
+    flex-grow: 1;
+}

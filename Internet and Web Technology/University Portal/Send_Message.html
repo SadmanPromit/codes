@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Send_Message.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('form').on('submit', function (e) {
+                e.preventDefault();
+
+                var formData = $(this).serialize();
+                console.log('Form data:', formData);
+            });
+        });
+    </script>
+    <title>Send Message</title>
+</head>
+<body>
+    <header>
+        <h2><img src="logo.png" alt="logo" style="width:25px;height:30px;"> University Portal</h2>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="Advising.html">Advising</a></li>
+            <li><a href="Grade Submission.html">Grades</a></li>
+            <li><a href="Payments.html">Payments</a></li>
+            <li><a href="Take Attendance.html">Take Attendance</a></li>
+            <li><a href="View Faculty Evaluation.html">Faculty Evaluation</a></li>
+            <li><a href="Curriculum.html">Curriculum</a></li>
+            <li><a href="Degree.html">Degree</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Send Message.html">Send Message</a></li>
+            <li><a href="User Guides.html">User Guides</a></li>
+            <li><a href="Login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <form action="send_message.php" method="post">
+        <fieldset>
+            <legend>Select Course:</legend>
+            <input type="checkbox" id="course1" name="course1" value="CSE482.1">
+            <label for="course1">CSE482.1</label>
+            <!-- Other checkboxes... -->
+        </fieldset>
+        <textarea id="Message" name="Message" rows="4" cols="50" placeholder="Message.."></textarea>
+        <input type="submit" value="Send">
+    </form>
+
+    <article>
+        <h1>Message History</h1>
+        <h4> Today Date : 03-13-2023 Faculty: NQH Contact Email: naqib.hussain@northsouth.edu</h4>
+        <form>
+            <input type="search" placeholder="Search..">
+            <input type="submit" value="Search">
+        </form>
+    </article>
+    <table border="1">
+        <tr>
+            <th>No.</th>
+            <th>Semester</th>
+            <th>Send To</th>
+            <th>Content</th>
+            <th>Sending Time</th>
+        </tr>
+        <tr>
+            <th>1.</th>
+            <th>231</th>
+            <th>CSE482.1</th>
+            <th>Class cancelled. Faculty attending medical emergency -CSE482.3 (NQH) (NQHCSE482 - 1 -NSU)</th>
+            <th>2023-03-11 08:46:50</th>
+        </tr>
+        <tr>
+            <th>2.</th>
+            <th>231</th>
+            <th>CSE482.2</th>
+            <th>Class cancelled. Faculty attending medical emergency -CSE482.3 (NQH) (NQHCSE482 - 2 -NSU)</th>
+            <th>2023-03-08 18:53:46</th>
+        </tr>
+        <tr>
+            <th>3.</th>
+            <th>231</th>
+            <th>CSE482.3</th>
+            <th>Class cancelled. Faculty attending medical emergency -CSE482.3 (NQH) (NQHCSE482 - 3 -NSU)</th>
+            <th>2023-03-08 18:53:15</th>
+        </tr>
+        <tr>
+            <th>4.</th>
+            <th>231</th>
+            <th>CSE482.4</th>
+            <th>Class cancelled. Faculty attending medical emergency -CSE482.3 (NQH) (NQHCSE482 - 4 -NSU)</th>
+            <th>2023-02-26 06:29:35</th>
+        </tr>
+        <tr>
+            <th>5.</th>
+            <th>231</th>
+            <th>CSE482.5</th>
+            <th>Class cancelled. Faculty attending medical emergency -CSE482.3 (NQH) (NQHCSE482 - 5 -NSU)</th>
+            <th>2023-02-26 06:29:35</th>
+        </tr>
+    </table>
+    <footer>Copyright © Sadman Sakib Khan | Email: sadman.khan@northsouth.edu</footer>
+</body>
+</html>

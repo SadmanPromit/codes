@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="content-wrap">
+        <div class="container">
+            <h1>Admin Dashboard</h1>
+            <!-- Rate Management Section -->
+            <h2>Rate Management</h2>
+            <form method="POST" action="{{ url_for('admin') }}">
+                <label for="rate">Current Billing Rate: </label>
+                <input type="text" id="rate" name="rate" value="{{ current_rate }}" required>
+                <input type="submit" value="Update Rate">
+            </form>
+            <!-- User Management Section -->
+            <h2>User Management</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.role }}</td>
+                        <td>
+                            <a href="{{ url_for('edit_user', user_id=user.id) }}">Edit</a>
+                            <form method="POST" action="{{ url_for('delete_user', user_id=user.id) }}" onsubmit="return confirmDelete('{{ user.username }}')">
+                                <input type="submit" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        function confirmDelete(username) {
+            return confirm("Are you sure you want to delete the user " + username + "?");
+        }
+    </script>
+    <footer>
+        Electrical and Computer Engineering (ECE) | North South University, Dhaka, Bangladesh | &copy; 2024 Sadman Sakib Khan Promit
+    </footer>
+</body>
+</html>
