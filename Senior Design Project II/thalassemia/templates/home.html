@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function switchInputMethod() {
+            const method = document.getElementById("inputMethod").value;
+            if (method === "dataRow") {
+                document.getElementById("dataRowSection").style.display = "block";
+                document.getElementById("manualInputsSection").style.display = "none";
+            } else {
+                document.getElementById("dataRowSection").style.display = "none";
+                document.getElementById("manualInputsSection").style.display = "block";
+                document.getElementById("dataRow").value = "";  // Resetting the value of data row input
+            }
+        }
+    </script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="content-wrap">
+        <div class="container">
+            <h2>Thalassemia type detection</h2>
+            <label for="inputMethod">Choose an input method:</label>
+            <select id="inputMethod" onchange="switchInputMethod()">
+                <option value="dataRow">Data Row</option>
+                <option value="manual">Manual Input</option>
+            </select>
+            <div id="dataRowSection">
+                <form method="post">
+                    {% if message %}
+                    <p style="color:red;">{{ message }}</p>
+                    {% endif %}
+                    <input type="text" placeholder="Data row (separated by spaces)" id="dataRow" name="dataRow" class="data-row"><br><br>
+                    <div class="button-container">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+            <div id="manualInputsSection" style="display: none;">
+                <form method="post">
+                    {% if message %}
+                    <p style="color:red;">{{ message }}</p>
+                    {% endif %}
+                    <div class="row">
+                        <div class="column">
+                            <label>Gender:</label>
+                            <input type="radio" id="male" name="Sex" value="Male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="Sex" value="Female">
+                            <label for="female">Female</label><br><br>
+                            <input type="text" placeholder="Age of the patient" id="Age" name="Age"><br><br>
+                            <input type="text" placeholder="Hemoglobin" id="Hb" name="Hb"><br><br>
+                            <input type="text" placeholder="Packed cell volume" id="PCV" name="PCV"><br><br>
+                            <input type="text" placeholder="Red blood cell" id="RBC" name="RBC"><br><br>
+                            <input type="text" placeholder="Mean corpuscular volume" id="MCV" name="MCV"><br><br>
+                        </div>
+                        <div class="column">
+                            <input type="text" placeholder="Mean corpuscular hemoglobin" id="MCH" name="MCH"><br><br>
+                            <input type="text" placeholder="Mean corpuscular hemoglobin concentration" id="MCHC" name="MCHC"><br><br>
+                            <input type="text" placeholder="Red blood cell distribution width" id="RDW" name="RDW"><br><br>
+                            <input type="text" placeholder="White blood cell" id="WBC" name="WBC"><br><br>
+                            <input type="text" placeholder="Platelet" id="Plt" name="Plt"><br><br>
+                            <input type="text" placeholder="Hemoglobin A" id="hbA" name="hbA"><br><br>
+                            <input type="text" placeholder="Hemoglobin A2" id="hbA2" name="hbA2"><br><br>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% if prediction %}
+            <script>
+                alert('{{ prediction }}');
+            </script>
+        {% endif %}
+    </div>
+    <footer>
+    Electrical and Computer Engineering (ECE) | North South University, Dhaka, Bangladesh | &copy; 2023 Sadman Sakib Khan Promit
+    </footer>
+</body>
+</html>
