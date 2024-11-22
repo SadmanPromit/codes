@@ -1,0 +1,7 @@
+2023-06-01 23:17:22,505 - INFO - __main__ -   Using device: cuda
+2023-06-01 23:19:39,116 - INFO - __main__ -   Starting epoch 1
+Finished epoch 1. Training loss: 0.07412954205598181, Training accuracy: 0.9733282637015082, Validation loss: 0.05554715911176079, Validation accuracy: 0.9797272774407632
+Starting epoch 2
+Finished epoch 2. Training loss: 0.04138461849877167, Training accuracy: 0.985320391369816, Validation loss: 0.05421789549932269, Validation accuracy: 0.9812395223034514
+Starting epoch 3
+Finished epoch 3. Training loss: 0.024222343772313238, Training accuracy: 0.9915249294104177, Validation loss: 0.059861925795933094, Validation accuracy: 0.981516047078343

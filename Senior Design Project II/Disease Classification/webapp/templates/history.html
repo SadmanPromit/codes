@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="content-wrap">
+        <h1>Your Prediction History</h1>
+         <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Prediction</th>
+                    <th>Sex</th>
+                    <th>Age</th>
+                    <th>Hb</th>
+                    <th>PCV</th>
+                    <th>RBC</th>
+                    <th>MCV</th>
+                    <th>MCH</th>
+                    <th>MCHC</th>
+                    <th>RDW</th>
+                    <th>WBC</th>
+                    <th>Plt</th>
+                    <th>hbA</th>
+                    <th>hbA2</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in history %}
+                <tr>
+                    <td>{{ entry.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                    <td>{{ entry.prediction }}</td>
+                    <td>{{ entry.Sex }}</td>
+                    <td>{{ entry.Age }}</td>
+                    <td>{{ entry.Hb }}</td>
+                    <td>{{ entry.PCV }}</td>
+                    <td>{{ entry.RBC }}</td>
+                    <td>{{ entry.MCV }}</td>
+                    <td>{{ entry.MCH }}</td>
+                    <td>{{ entry.MCHC }}</td>
+                    <td>{{ entry.RDW }}</td>
+                    <td>{{ entry.WBC }}</td>
+                    <td>{{ entry.Plt }}</td>
+                    <td>{{ entry.hbA }}</td>
+                    <td>{{ entry.hbA2 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <footer>
+    Electrical and Computer Engineering (ECE) | North South University, Dhaka, Bangladesh | &copy; 2023 Sadman Sakib Khan Promit
+    </footer>
+</body>
+</html>

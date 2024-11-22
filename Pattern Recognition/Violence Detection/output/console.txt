@@ -1,0 +1,106 @@
+"C:\Program Files\Python311\python.exe" C:\Users\promi\Documents\v3\behavior.py
+__main__ - INFO - No pre-trained model found
+  0%|          | 0/88 [00:00<?, ?it/s]C:\Program Files\Python311\Lib\site-packages\torch\utils\checkpoint.py:31: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn("None of the inputs have requires_grad=True. Gradients will be None")
+ 35%|███▌      | 31/88 [06:23<12:47, 13.46s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [17:54<00:00, 12.21s/it]
+100%|██████████| 19/19 [06:46<00:00, 21.39s/it]
+__main__ - INFO - Saved model checkpoint to 'behavior_analysis.pt'
+__main__ - INFO - Epoch: 01 | Time: 24m 42s
+__main__ - INFO - 	Train Loss: 0.369 | Train Acc: 82.81%
+__main__ - INFO - 	 Val. Loss: 0.186 |  Val. Acc: 93.86%
+ 90%|████████▉ | 79/88 [16:07<02:26, 16.24s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [17:44<00:00, 12.10s/it]
+100%|██████████| 19/19 [07:04<00:00, 22.33s/it]
+__main__ - INFO - Saved model checkpoint to 'behavior_analysis.pt'
+__main__ - INFO - Epoch: 02 | Time: 24m 49s
+__main__ - INFO - 	Train Loss: 0.175 | Train Acc: 93.47%
+__main__ - INFO - 	 Val. Loss: 0.106 |  Val. Acc: 96.71%
+ 34%|███▍      | 30/88 [05:55<11:00, 11.39s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [17:54<00:00, 12.21s/it]
+100%|██████████| 19/19 [06:58<00:00, 22.01s/it]
+__main__ - INFO - Saved model checkpoint to 'behavior_analysis.pt'
+__main__ - INFO - Epoch: 03 | Time: 25m 5s
+__main__ - INFO - 	Train Loss: 0.083 | Train Acc: 96.59%
+__main__ - INFO - 	 Val. Loss: 0.095 |  Val. Acc: 97.26%
+ 84%|████████▍ | 74/88 [15:00<02:45, 11.85s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [17:47<00:00, 12.14s/it]
+100%|██████████| 19/19 [06:40<00:00, 21.09s/it]
+__main__ - INFO - Saved model checkpoint to 'behavior_analysis.pt'
+__main__ - INFO - Epoch: 04 | Time: 24m 29s
+__main__ - INFO - 	Train Loss: 0.108 | Train Acc: 95.53%
+__main__ - INFO - 	 Val. Loss: 0.075 |  Val. Acc: 96.93%
+ 52%|█████▏    | 46/88 [09:44<10:00, 14.30s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [17:43<00:00, 12.09s/it]
+100%|██████████| 19/19 [06:42<00:00, 21.16s/it]
+__main__ - INFO - Epoch: 05 | Time: 24m 26s
+__main__ - INFO - 	Train Loss: 0.077 | Train Acc: 97.30%
+__main__ - INFO - 	 Val. Loss: 0.087 |  Val. Acc: 95.83%
+ 45%|████▌     | 40/88 [07:45<10:30, 13.13s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [17:55<00:00, 12.22s/it]
+100%|██████████| 19/19 [06:44<00:00, 21.29s/it]
+__main__ - INFO - Epoch: 06 | Time: 24m 40s
+__main__ - INFO - 	Train Loss: 0.031 | Train Acc: 98.65%
+__main__ - INFO - 	 Val. Loss: 0.111 |  Val. Acc: 96.27%
+ 12%|█▎        | 11/88 [02:17<16:12, 12.63s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [18:00<00:00, 12.28s/it]
+100%|██████████| 19/19 [06:46<00:00, 21.42s/it]
+__main__ - INFO - Epoch: 07 | Time: 24m 48s
+__main__ - INFO - 	Train Loss: 0.058 | Train Acc: 97.66%
+__main__ - INFO - 	 Val. Loss: 0.080 |  Val. Acc: 97.26%
+ 85%|████████▌ | 75/88 [15:28<02:55, 13.51s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [18:02<00:00, 12.30s/it]
+100%|██████████| 19/19 [06:48<00:00, 21.48s/it]
+__main__ - INFO - Epoch: 08 | Time: 24m 51s
+__main__ - INFO - 	Train Loss: 0.077 | Train Acc: 96.80%
+__main__ - INFO - 	 Val. Loss: 0.096 |  Val. Acc: 96.16%
+  3%|▎         | 3/88 [00:24<11:37,  8.21s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [18:39<00:00, 12.72s/it]
+100%|██████████| 19/19 [07:54<00:00, 24.97s/it]
+__main__ - INFO - Epoch: 09 | Time: 26m 34s
+__main__ - INFO - 	Train Loss: 0.038 | Train Acc: 97.94%
+__main__ - INFO - 	 Val. Loss: 0.097 |  Val. Acc: 96.27%
+ 48%|████▊     | 42/88 [09:42<14:59, 19.56s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [18:30<00:00, 12.62s/it]
+100%|██████████| 19/19 [07:20<00:00, 23.20s/it]
+__main__ - INFO - Epoch: 10 | Time: 25m 52s
+__main__ - INFO - 	Train Loss: 0.029 | Train Acc: 98.93%
+__main__ - INFO - 	 Val. Loss: 0.099 |  Val. Acc: 96.49%
+ 25%|██▌       | 22/88 [05:20<21:02, 19.13s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [17:43<00:00, 12.09s/it]
+100%|██████████| 19/19 [07:16<00:00, 22.98s/it]
+__main__ - INFO - Epoch: 11 | Time: 25m 1s
+__main__ - INFO - 	Train Loss: 0.024 | Train Acc: 99.15%
+__main__ - INFO - 	 Val. Loss: 0.099 |  Val. Acc: 95.83%
+ 82%|████████▏ | 72/88 [14:36<02:56, 11.01s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [17:47<00:00, 12.13s/it]
+100%|██████████| 19/19 [07:13<00:00, 22.81s/it]
+__main__ - INFO - Epoch: 12 | Time: 25m 1s
+__main__ - INFO - 	Train Loss: 0.032 | Train Acc: 98.79%
+__main__ - INFO - 	 Val. Loss: 0.093 |  Val. Acc: 97.15%
+ 80%|███████▉  | 70/88 [14:15<03:19, 11.11s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [17:42<00:00, 12.08s/it]
+100%|██████████| 19/19 [07:10<00:00, 22.65s/it]
+__main__ - INFO - Epoch: 13 | Time: 24m 53s
+__main__ - INFO - 	Train Loss: 0.033 | Train Acc: 98.86%
+__main__ - INFO - 	 Val. Loss: 0.098 |  Val. Acc: 97.92%
+ 83%|████████▎ | 73/88 [15:17<02:51, 11.46s/it]mb_type 104 in P slice too large at 98 31
+error while decoding MB 98 31
+100%|██████████| 88/88 [18:00<00:00, 12.28s/it]
+100%|██████████| 19/19 [06:56<00:00, 21.90s/it]
+__main__ - INFO - No improvement in validation loss for 10 epochs. Stopping training.
+
+Process finished with exit code 0

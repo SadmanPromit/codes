@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+    {% include 'navbar.html' %}
+    <div class="content-wrap">
+        <div class="container">
+            {% if error %}
+                <div style="color: red; text-align: center; margin-bottom: 15px;">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <form method="post" class="auth-form">
+                <input type="text" placeholder="Username" name="username"><br>
+                <input type="password" placeholder="Password" name="password"><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+    <footer>
+    Electrical and Computer Engineering (ECE) | North South University, Dhaka, Bangladesh | &copy; 2023 Sadman Sakib Khan Promit
+    </footer>
+    </body>
+</html>

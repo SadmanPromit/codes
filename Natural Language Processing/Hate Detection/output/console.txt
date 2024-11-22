@@ -1,0 +1,95 @@
+"C:\Program Files\Python311\python.exe" "G:\My Drive\Courses\CSE495\hate\hate.py" 
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.seq_relationship.weight', 'cls.predictions.decoder.weight', 'cls.predictions.bias']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+C:\Program Files\Python311\Lib\site-packages\transformers\optimization.py:407: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+100%|██████████| 28931/28931 [34:15:16<00:00,  4.26s/it]
+100%|██████████| 7233/7233 [26:04<00:00,  4.62it/s]
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1114, in emit
+    self.flush()
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "G:\My Drive\Courses\CSE495\hate\hate.py", line 119, in <module>
+    logger.info(f'Finished epoch {epoch + 1}. Training loss: {train_loss}, Training accuracy: {train_accuracy}, Validation loss: {val_loss}, Validation accuracy: {val_accuracy}')
+Message: 'Finished epoch 1. Training loss: 0.07412954205598181, Training accuracy: 0.9733282637015082, Validation loss: 0.05554715911176079, Validation accuracy: 0.9797272774407632'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1114, in emit
+    self.flush()
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "G:\My Drive\Courses\CSE495\hate\hate.py", line 58, in <module>
+    logger.info(f'Starting epoch {epoch + 1}')
+Message: 'Starting epoch 2'
+Arguments: ()
+100%|██████████| 28931/28931 [38:54:16<00:00,  4.84s/it]
+100%|██████████| 7233/7233 [1:04:28<00:00,  1.87it/s]
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1114, in emit
+    self.flush()
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "G:\My Drive\Courses\CSE495\hate\hate.py", line 119, in <module>
+Message: 'Finished epoch 2. Training loss: 0.04138461849877167, Training accuracy: 0.985320391369816, Validation loss: 0.05421789549932269, Validation accuracy: 0.9812395223034514'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1114, in emit
+    self.flush()
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "G:\My Drive\Courses\CSE495\hate\hate.py", line 58, in <module>
+    for epoch in range(10):
+Message: 'Starting epoch 3'
+Arguments: ()
+100%|██████████| 28931/28931 [37:32:46<00:00,  4.67s/it]
+100%|██████████| 7233/7233 [1:15:31<00:00,  1.60it/s]
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1114, in emit
+    self.flush()
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "G:\My Drive\Courses\CSE495\hate\hate.py", line 119, in <module>
+Message: 'Finished epoch 3. Training loss: 0.024222343772313238, Training accuracy: 0.9915249294104177, Validation loss: 0.059861925795933094, Validation accuracy: 0.981516047078343'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1114, in emit
+    self.flush()
+  File "C:\Program Files\Python311\Lib\logging\__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 22] Invalid argument
+Call stack:
+  File "G:\My Drive\Courses\CSE495\hate\hate.py", line 58, in <module>
+    for epoch in range(10):
+Message: 'Starting epoch 4'
+Arguments: ()
+ 25%|██▍       | 7196/28931 [9:13:19<27:51:16,  4.61s/it]
+Traceback (most recent call last):
+  File "G:\My Drive\Courses\CSE495\hate\hate.py", line 79, in <module>
+    
+  File "C:\Program Files\Python311\Lib\site-packages\torch\_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "C:\Program Files\Python311\Lib\site-packages\torch\autograd\__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+
+Process finished with exit code -1
