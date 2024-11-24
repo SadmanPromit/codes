@@ -1,0 +1,10 @@
+# config.yaml
+dataset_path: './'
+checkpoint_path: './behavior_analysis.pt'
+num_epochs: 100
+learning_rate: 0.001
+batch_size: 16
+num_classes: 2
+class_names: ['neg', 'pos']
+num_frames: 16
+accumulation_steps: 4
