@@ -40,7 +40,7 @@ public class Server {
 							final int temp = i;
 							t[i] = new Thread() {
 								public void run() {
-//									This program uses blocking IO api. That's why the server needs all the connected clients answers to get the output. The program would be much more responsive if Non Blocking IO(Java NIO) api was used. Selectors would do the work. But it was not mentioned in the class and those topics are not in the syllabus so it was not implemented here. Hoping to get full marks. Thanks. 
+//									This program uses blocking IO api. That's why the server needs all the connected clients answers to get the output. The program would be much more responsive if Non Blocking IO(Java NIO) api was used. Selectors would do the work. 
 									System.out.println(clientList.get(temp).name + " answered: " + clientList.get(temp).reader.nextLine()); /*Blocking IO blocks the thread until answer are received*/
 									System.out.println("Enter 'Y' to mark. 'N' to continue.");
 									char tempChar = consoleInput.nextLine().charAt(0);
