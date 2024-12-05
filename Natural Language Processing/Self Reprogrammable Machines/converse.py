@@ -1,4 +1,4 @@
-# Self Reprogrammable Machines (SRM) v2
+# converse: v2 © 2024 Sadman Sakib Khan Promit
 from transformers import AutoTokenizer, AutoModelForCausalLM, logging
 from scipy.io.wavfile import write
 from gtts import gTTS

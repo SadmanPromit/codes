@@ -1,4 +1,4 @@
-# Self Reprogrammable Machines (SRM) v1
+# srm: v1
 from transformers import AutoTokenizer, AutoModelForCausalLM, logging
 import torch
 import warnings
