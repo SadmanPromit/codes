@@ -1,5 +1,8 @@
-# speech translator: bn -> en v1 © 2024 Sadman Sakib Khan Promit
-# pip install noisereduce scipy gtts googletrans==4.0.0-rc1 SpeechRecognition sounddevice pygame numpy
+# speech translator: en <-> bn v2 © 2024 Sadman Sakib Khan Promit
+# pip install noisereduce scipy gtts googletrans==4.0.0-rc1 SpeechRecognition sounddevice pygame numpy langdetect
+# input device mic -> output device speaker
+# speaking English will translate to Bangla
+# speaking Bangla will translate to English
 from scipy.io.wavfile import write, read
 from noisereduce import reduce_noise
 from gtts import gTTS
@@ -8,6 +11,7 @@ import sounddevice as sd
 import numpy as np
 from googletrans import Translator
 import speech_recognition as sr
+from langdetect import detect
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1"
 import pygame
 
@@ -43,7 +47,7 @@ def reduce_audio_noise(file):
     reduced_noise = reduce_noise(y=data.astype(float), sr=sample_rate)
     write(file, sample_rate, reduced_noise.astype(np.int16))
 
-def voice_input_bangla():
+def voice_input():
     file = "temp.wav"
     try:
         record(filename=file)
@@ -51,16 +55,29 @@ def voice_input_bangla():
         recognizer = sr.Recognizer()
         with sr.AudioFile(file) as source:
             audio_data = recognizer.record(source)
-        result_text = recognizer.recognize_google(audio_data, language="bn-BD")
-        return result_text
+        result_text = recognizer.recognize_google(audio_data)
+        detected_language = detect(result_text)
+        translator = Translator()
+        if detected_language == 'en':
+            result_text = recognizer.recognize_google(audio_data, language="en-BD")
+            print(f'[Recognized]: {result_text}')
+            translation = translator.translate(result_text, dest='bn').text
+            print(f'[Translated]: {translation}')
+            return translation
+        else:
+            result_text = recognizer.recognize_google(audio_data, language="bn-BD")
+            print(f'[Recognized]: {result_text}')
+            translation = translator.translate(result_text, dest='en').text
+            print(f'[Translated]: {translation}')
+            return translation
     except Exception as e:
         pass
     finally:
         if os.path.exists(file):
             os.remove(file)
-    return voice_input_bangla()
+    return voice_input()
 
-def speech_output(text):
+def voice_output(text):
     tts = gTTS(text)
     file = "temp.mp3"
     tts.save(file)
@@ -74,15 +91,10 @@ def speech_output(text):
     os.remove(file)
 
 def main():
-    translator = Translator()
     while True:
-        print("[Speak in Bangla]")
-        text = voice_input_bangla()
-        if text:
-            print(f'[Bangla Recognized]: {text}')
-            translated = translator.translate(text, dest='en')
-            print(f'[Translated to English]: {translated.text}')
-            speech_output(translated.text)
+        print("[Speak]")
+        text = voice_input()
+        voice_output(text)
 
 if __name__ == "__main__":
     main()
