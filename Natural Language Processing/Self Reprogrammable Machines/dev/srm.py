@@ -1,4 +1,4 @@
-# srm: v1
+# srm: v1 © 2024 Sadman Sakib Khan Promit
 from transformers import AutoTokenizer, AutoModelForCausalLM, logging
 import torch
 import warnings
