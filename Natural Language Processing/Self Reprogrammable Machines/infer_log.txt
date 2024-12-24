@@ -1,7 +1,0 @@
-[How many a's are there in the string abcabca?] [There are 3 a's in the string] [10 * 4.77 = 47.66m]
-[What's ten times zero?] [Zero. What's zero times ten? Zero.] [10 * 4.16 = 41.62m]
-[If the village barber cuts hair who does not cut their own hair, then who cuts the barber's hair?] [This is a classic example of a self-refer] [10 * 5.46 = 54.55m]
-[What day is it?] [It's #TacoTuesday, of course!] [10 * 4.19 = 41.87m]
-[Do you lie?] [How to know whether your child is lying to you] [10 * 4.19 = 41.87m]
-[Are you my child?] [A Journey to Discover your True Parentage
-A Journey to Discover your True] [15 * 4.11 = 61.64m]

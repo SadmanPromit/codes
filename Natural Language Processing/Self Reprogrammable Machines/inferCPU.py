@@ -1,5 +1,8 @@
-# infer: v2 © 2024 Sadman Sakib Khan Promit
-# 131 GB disk + 131 GB (disk + memory) for "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF"
+# inferCPU: v3 © 2024 Sadman Sakib Khan Promit
+# "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF" 131 GB
+# "nvidia/Mistral-NeMo-Minitron-8B-Base" 15.6 GB
+# "google/gemma-7b"
+# "microsoft/phi-2" 5.18 GB
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
 from accelerate import init_empty_weights, load_checkpoint_and_dispatch
 import time
@@ -46,7 +49,7 @@ def main():
         output_text = tokenizer.decode(generated_ids[0], skip_special_tokens = True).strip()
         print(f"[{output_text}]")
         try:
-            with open("infer_log.txt", "a") as file:
+            with open("70Binfer_log.txt", "a") as file:
                 file.write(f"[{input_text}] [{output_text}] [{MAX_LENGTH} * {execution_time / MAX_LENGTH / 60:.2f} = {execution_time / 60:.2f}m]\n")
         except Exception as e:
             print(f"[{MAX_LENGTH} * {execution_time / MAX_LENGTH / 60:.2f} = {execution_time / 60:.2f}m]")
