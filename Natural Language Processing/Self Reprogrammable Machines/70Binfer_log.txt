@@ -19,3 +19,16 @@ Pi (π) is] [10 * 4.37 = 43.70m]
 I know what my parents] [10 * 4.34 = 43.44m]
 [Who do you think would be the next POTUS?] [(Poll)
 Who do you think will be the next POTUS? (] [15 * 4.51 = 67.58m]
+[Code to compute factorial of 3] [using Python is as follows:
+```
+def factorial(number):
+   if number == 1:
+       return 1
+   else:
+       return number] [30 * 4.17 = 125.01m]
+[factorial(2)] [= 2
+factorial(3) = 2 * 3
+factorial(4) = 2 * 3 * 4] [30 * 4.15 = 124.57m]
+[The sun setted in the east that day.] [The birds sang in a sorrowful tune and the wind had a chill to it that wasn't usual for the summer evening. The people who lived in the village nearby sensed that something was off and they] [40 * 4.38 = 175.17m]
+[The sun setted in the east that day. The birds sang in a sorrowful tune and the wind had a chill to it that wasn't usual for the summer evening. The people who lived in the village nearby sensed that something was off and they] [knew it wasn't just the weather. That was] [10 * 4.19 = 41.94m]
+[The people who lived in the village nearby sensed that something was off and they knew it wasn't just the weather. That was] [when they started to hear strange noises coming from the] [10 * 4.07 = 40.69m]
