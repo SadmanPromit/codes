@@ -1,4 +1,4 @@
-# inferCPU: v3 © 2024 Sadman Sakib Khan Promit
+# infer_disk: v3 © 2024 Sadman Sakib Khan Promit
 # "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF" 131 GB
 # "nvidia/Mistral-NeMo-Minitron-8B-Base" 15.6 GB
 # "google/gemma-7b"
