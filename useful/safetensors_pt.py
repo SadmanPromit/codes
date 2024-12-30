@@ -1,3 +1,4 @@
+# safetensors_pt: v1 © 2024 Sadman Sakib Khan Promit
 import torch
 from safetensors import safe_open
 from transformers import AutoConfig

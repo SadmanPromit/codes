@@ -1,4 +1,4 @@
-# usage: v3 © 2024 Sadman Sakib Khan Promit
+# usage: v4 © 2024 Sadman Sakib Khan Promit
 import time
 import subprocess
 import psutil
@@ -10,7 +10,9 @@ def get_ram(pid):
         mem_info = process.memory_info()
         return mem_info.rss / 1024 / 1024 / 1024
     except Exception as e:
-        return 0
+        return -1
+
+import subprocess
 
 def get_gpu():
     try:
@@ -25,31 +27,32 @@ def get_gpu():
             mem_used = int(mem_used) / 1024
             return gpu_util, mem_used
     except Exception as e:
-        return 0, 0
+        return -1, -1
+
+
 
 def usage(pid, interval):
-    try:
-        with open("usage_log.txt", "a") as f:
-            timestamp = 0
-            while True:
-                cpu = psutil.cpu_percent(interval = 1)
-                ram = get_ram(pid)
-                gpu, vram = get_gpu()
-                if cpu or gpu:                        
-                    log_string = f"T + {int(timestamp / 60)}m: CPU: {cpu:.1f}% RAM: {ram:.1f}GB GPU: {gpu:.1f}% VRAM: {vram:.1f}GB\n"
-                    f.write(log_string)
-                    f.flush()
-                    print(log_string, end = "")
-                timestamp = timestamp + interval
-                time.sleep(interval)
-    except Exception as e:
-        pass
+    timestamp = 0
+    while True:
+        cpu = psutil.cpu_percent(interval = 1)
+        ram = get_ram(pid)
+        gpu, vram = get_gpu()
+        if cpu or gpu:                        
+            log_string = f"T + {int(timestamp / 60)}m: CPU: {cpu:.1f}% RAM: {ram:.1f}GB GPU: {gpu:.1f}% VRAM: {vram:.1f}GB\n"
+            print(log_string, end = "")
+        timestamp = timestamp + interval
+        time.sleep(interval)
 
 if __name__ == "__main__":
+    target_pid = -1
     self_pid = os.getpid()
     for proc in psutil.process_iter():
         if proc.name() == "python.exe":
             if proc.pid != self_pid:
                 target_pid = proc.pid
                 break
-    usage(target_pid, 60 * 5)
+    if target_pid != -1:
+        print(f"PID {target_pid}")
+        usage(target_pid, 60)
+    else:
+        print(f"PID null")

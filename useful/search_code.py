@@ -1,3 +1,4 @@
+# search_code: v1 © 2024 Sadman Sakib Khan Promit
 import os
 
 def search_string_in_file(file_name, string_to_search):

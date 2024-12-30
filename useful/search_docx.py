@@ -1,3 +1,4 @@
+# search_docx: v1 © 2024 Sadman Sakib Khan Promit
 import os
 from docx import Document
 
