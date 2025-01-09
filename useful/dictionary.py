@@ -1,4 +1,4 @@
-# dictionary: v1 © 2024 Sadman Sakib Khan Promit
+# dictionary: v2 © 2024 Sadman Sakib Khan Promit
 import nltk
 from nltk.corpus import wordnet
 import pytesseract
@@ -27,8 +27,8 @@ def main():
         definitions = wordnet.synsets(word)
         if definitions:
             definition = definitions[0].definition()
-            print(f"[{word}: {definition}]")
-            voice_output(definition)
+            print(f"[{word} means {definition}]")
+            voice_output(f"{word} means {definition}")
         else:
             print(f"[{word}]")
             lookup_online(word + " definition")
